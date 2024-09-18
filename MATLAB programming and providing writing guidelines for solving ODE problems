@@ -1,0 +1,15 @@
+clear; 
+clc;
+ode_function = @(t, y) -2*y;  
+tspan = [0 5];
+y0 = 1;  
+[t, y] = ode45(ode_function, tspan, y0);
+figure;
+plot(t, y, '-o');
+title('Solution of ODE: y'' = -2*y');
+xlabel('Time (s)');
+ylabel('y(t)');
+grid on;
+legend('y(t)');
+set(gca, 'FontSize', 12);
+disp('ODE Solution Completed Successfully!');
