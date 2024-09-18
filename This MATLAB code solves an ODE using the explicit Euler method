@@ -1,0 +1,14 @@
+clear
+clc
+f1 = @(t, y) 1-(y/t);
+t0 = 1;     
+y0 = 1;    
+tf = 1.5;     
+h = 0.1;   
+N = ((tf - t0)/h);
+t = t0:h:tf;
+y = zeros(1, N);
+y(1) = y0;
+for n = 1:N
+    y(n+1) = y(n) + h*f1(t(n), y(n));
+end
