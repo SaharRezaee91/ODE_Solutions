@@ -1,0 +1,12 @@
+Clear
+CLC
+h=0.1;
+x=1:h:1.4;
+y=zeros(size(x));
+y(1)=1;
+for i=1:(length(x)-1)
+    k1=h*(x(i)*y(i));
+    k2=h*((x(i)+h)*(y(i)+k1));
+    y(i+1)=y(i)+(k1+k2)/2;
+end
+Disp(y);
